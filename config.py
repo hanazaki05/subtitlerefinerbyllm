@@ -55,6 +55,7 @@ class Config:
     max_chunks: Optional[int] = None
     price_per_1k_prompt_tokens: float = 0.03
     price_per_1k_completion_tokens: float = 0.06
+    glossary_max_entries: int = 100
     main_model: MainModelSettings = field(default_factory=MainModelSettings)
     terminology_model: TerminologyModelSettings = field(default_factory=TerminologyModelSettings)
 
@@ -94,7 +95,8 @@ def load_config(
     verbose: bool = False,
     very_verbose: bool = False,
     debug_prompts: bool = False,
-    stats_interval: Optional[float] = None
+    stats_interval: Optional[float] = None,
+    glossary_limit: Optional[int] = None
 ) -> Config:
     """
     Load configuration with optional overrides.
@@ -112,6 +114,7 @@ def load_config(
         very_verbose: Enable very verbose mode (full API outputs)
         debug_prompts: Print system prompt/memory for debugging
         stats_interval: Stats refresh interval in seconds
+        glossary_limit: Maximum number of terminology entries to keep in memory
 
     Returns:
         Config object with specified settings
@@ -145,5 +148,7 @@ def load_config(
         config.verbose = True
     if stats_interval is not None:
         config.stats_interval = stats_interval
+    if glossary_limit is not None:
+        config.glossary_max_entries = glossary_limit
 
     return config

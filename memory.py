@@ -245,9 +245,10 @@ def update_global_memory(
 
     # Limit glossary size to prevent unbounded growth
     # Keep most recent entries if we exceed limit
-    max_glossary_entries = 100
-    if len(memory.glossary) > max_glossary_entries:
-        memory.glossary = memory.glossary[-max_glossary_entries:]
+    max_glossary_entries = getattr(config, "glossary_max_entries", 100)
+    if max_glossary_entries and max_glossary_entries > 0:
+        if len(memory.glossary) > max_glossary_entries:
+            memory.glossary = memory.glossary[-max_glossary_entries:]
 
     return memory
 

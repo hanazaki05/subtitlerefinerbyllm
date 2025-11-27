@@ -414,12 +414,14 @@ class Config:
     max_chunks: Optional[int] = None
     price_per_1k_prompt_tokens: float = 0.03
     price_per_1k_completion_tokens: float = 0.06
+    glossary_max_entries: int = 100
     main_model: MainModelSettings = field(default_factory=MainModelSettings)
     terminology_model: TerminologyModelSettings = field(default_factory=TerminologyModelSettings)
 ```
 
 - **Reasoning effort**: Adjust `config.main_model.reasoning_effort` to hint GPT-5.1's reasoning depth (`"none"`, `"low"`, `"medium"`, `"high"`).
 - **Temperature**: Tune `config.main_model.temperature` (defaults to `1.0`) for the primary GPT-5 run, and `config.terminology_model.temperature` for the GPT-4o terminology extractor if you need stricter or looser extraction.
+- **Glossary limit**: Adjust `config.glossary_max_entries` (default `100`) if you need to retain more/fewer global terminology entries in the prompt.
 
 ### Using Alternative API Providers
 
