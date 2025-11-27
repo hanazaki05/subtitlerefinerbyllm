@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.4] - 2025-11-28
+
+### Changed
+- `config.py` now separates main GPT-5.1 settings (`MainModelSettings`) from the dedicated GPT-4o terminology extractor (`TerminologyModelSettings`), each with their own temperature and token limits.
+- `llm_client.call_openai_api()` accepts per-model settings and automatically injects the correct temperature / reasoning hints (reasoning only for GPT-5.x).
+- `memory.py` hooks into the new terminology model: each chunk is sent to GPT-4o-mini via `extract_terminology_from_chunk()`, which validates the returned glossary entries (confidence ≥ 0.6, normalized types, evidence trimming) before merging.
+- Global glossary growth is constrained (last 100 entries) and the verbose pipeline now shows the accumulated terminology in `-vv` / `-vvv` prompts, keeping context consistent across chunks.
+
 ## [1.0.3] - 2025-11-27
 
 ### Added
