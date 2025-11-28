@@ -558,7 +558,7 @@ Dialogue: -1,0:00:02.56,0:00:04.00,English3,NTP,0000,0000,0000,,Tonight, on JAG.
 - **Edge Cases**: May not preserve all complex ASS formatting in rare cases
 - **Single File Processing**: Processes one file at a time (no batch mode)
 Here are two polished versions—you can choose the tone you prefer:
-- **No compatibility with other API formats is guaranteed:** There are plans to support OpenAI-compatible APIs (e.g., NewAPI).
+- **No compatibility with other API formats is guaranteed**: There are plans to support OpenAI-compatible APIs (e.g., NewAPI).
 
 ## Future Enhancements
 
