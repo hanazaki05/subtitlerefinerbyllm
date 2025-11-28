@@ -14,7 +14,7 @@ from typing import Optional
 class MainModelSettings:
     """Primary refinement model configuration."""
 
-    name: str = "gpt-5.1"
+    name: str = "gpt-5-mini"
     max_output_tokens: int = 12000
     reasoning_effort: str = "medium"
     temperature: float = 1.0  # GPT-5.* fixed temperature internally
@@ -24,8 +24,8 @@ class TerminologyModelSettings:
     """Dedicated terminology extractor model configuration."""
 
     name: str = "gpt-4o-mini"
-    max_output_tokens: int = 1500
-    temperature: float = 0.3
+    max_output_tokens: int = 1800
+    temperature: float = 0.35
 
 
 @dataclass
