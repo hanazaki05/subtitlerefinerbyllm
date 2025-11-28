@@ -103,8 +103,6 @@ VALID_TERMINOLOGY_TYPES = {
     "other"
 }
 
-MIN_TERM_CONFIDENCE = 0.6
-
 
 
 
@@ -126,7 +124,7 @@ def _coerce_evidence_ids(raw_ids: Any) -> List[int]:
     return evidence
 
 
-def _parse_terminology_entries(raw_data: Any) -> List[TerminologyEntry]:
+def _parse_terminology_entries(raw_data: Any, min_confidence: float) -> List[TerminologyEntry]:
     """Validate and convert raw JSON array to TerminologyEntry objects."""
     if not isinstance(raw_data, list):
         return []
@@ -148,7 +146,7 @@ def _parse_terminology_entries(raw_data: Any) -> List[TerminologyEntry]:
 
         if not eng or not zh:
             continue
-        if confidence < MIN_TERM_CONFIDENCE:
+        if confidence < min_confidence:
             continue
         if type_value not in VALID_TERMINOLOGY_TYPES:
             continue
@@ -170,6 +168,7 @@ def _parse_terminology_entries(raw_data: Any) -> List[TerminologyEntry]:
 def extract_terminology_from_chunk(
     pairs: List[SubtitlePair],
     config: Config,
+    user_glossary: List[Dict[str, str]] | None = None,
     max_retries: int = 2
 ) -> List[Dict[str, Any]]:
     """Extract terminology by calling the dedicated terminology LLM."""

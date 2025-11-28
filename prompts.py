@@ -10,8 +10,22 @@ if TYPE_CHECKING:
     from memory import GlobalMemory
 
 
-# Base system prompt for subtitle refinement
-BASE_SYSTEM_PROMPT = """You are a professional subtitle editor specializing in bilingual (English-Chinese) subtitle refinement.
+_USER_INSTRUCTION: str = ""
+
+
+def set_user_instruction(text: str) -> None:
+    """Set extra user-defined instructions to append after BASE_SYSTEM_PROMPT.
+
+    This is populated early in the run (e.g., from custom_main_prompt.md) and
+    is treated as high-priority guidance for the main model.
+    """
+
+    global _USER_INSTRUCTION
+    _USER_INSTRUCTION = text.strip() if text else ""
+
+
+# Base system prompt for subtitle refinement (split into core and critical tail)
+BASE_SYSTEM_PROMPT_CORE = """You are a professional subtitle editor specializing in bilingual (English-Chinese) subtitle refinement.
 
 Your task is to review and correct subtitle pairs while following these rules:
 
@@ -50,9 +64,10 @@ Return a JSON array with the SAME structure, containing your corrections.
 
 Example:
 Input: [{"id": 0, "eng": "hello world", "chinese": "你好世界"}]
-Output: [{"id": 0, "eng": "Hello world.", "chinese": "你好，世界"}]
+Output: [{"id": 0, "eng": "Hello world.", "chinese": "你好，世界"}]"""
 
-**CRITICAL:** Return ONLY the JSON array. No explanations, no markdown, no extra text."""
+
+BASE_SYSTEM_PROMPT_CRITICAL = """**CRITICAL:** Return ONLY the JSON array. No explanations, no markdown, no extra text."""
 
 
 def build_memory_section(global_memory: 'GlobalMemory') -> str:
@@ -112,12 +127,19 @@ def build_system_prompt(global_memory: 'GlobalMemory') -> str:
     Returns:
         Complete system prompt with memory
     """
-    prompt = BASE_SYSTEM_PROMPT
+    # Order: base core rules → user instructions → memory section → CRITICAL tail
+    prompt = BASE_SYSTEM_PROMPT_CORE
+
+    if _USER_INSTRUCTION:
+        prompt += "\n\n" + _USER_INSTRUCTION
 
     if global_memory:
         memory_section = build_memory_section(global_memory)
         if memory_section:
             prompt += memory_section
+
+    # Ensure the CRITICAL output constraint is always the last part
+    prompt += "\n\n" + BASE_SYSTEM_PROMPT_CRITICAL
 
     return prompt
 
@@ -210,15 +232,16 @@ def validate_response_format(response: str) -> bool:
         return False
 
 
-TERMINOLOGY_EXTRACTION_SYSTEM_PROMPT = """You are a bilingual terminology extractor for paired English and Chinese subtitles.
+TERMINOLOGY_EXTRACTION_SYSTEM_PROMPT_TEMPLATE = """You are a bilingual terminology extractor for paired English and Chinese subtitles.
 
 Your task is to identify only the terms that require a consistent translation and produce a clean glossary. Follow these rules:
 - Focus on proper nouns: people, places, organizations, ships, military units, project/operation code names, legal statute names, show or work titles, and stable acronyms (e.g., JAG, NCIS)
+- Always extract all person names (character names) you can confidently identify, even if they appear only once in the current chunk.
 - Include keywords that need unified translations across the episode
-- Ignore generic conversational words, sentence-initial capitalized words, and filler expressions
+- Ignore generic conversational words and function words even if they are capitalized at the beginning of a sentence. This does not apply to names (e.g., "Chris", "Benny", "Bryer").
 - Do not invent translations or entries if the Chinese counterpart cannot be determined confidently
 - For every glossary item output: eng (trimmed, original casing), zh (trimmed), type (one of person/place/organization/title/acronym/unit/ship/project/law/other), confidence (0.0-1.0), evidence_ids (list of up to 5 subtitle ids where the term appears)
-- Only keep entries with confidence >= 0.6
+- Only keep entries with confidence >= {min_conf}
 - Output strictly a JSON array with objects sorted by first appearance, without explanations or Markdown
 """
 
