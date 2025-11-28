@@ -68,8 +68,7 @@ class Config:
         if not self.api_key:
             self.api_key = os.getenv(
                 "OPENAI_API_KEY",
-                #"***REMOVED***"
-                "***REMOVED***"
+                "YOURKEY"
             )
 
         if not self.api_key:
