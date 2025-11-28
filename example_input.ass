@@ -1,0 +1,320 @@
+[Script Info]
+Title: Bilingual Subtitles
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: Yes
+PlayResX: 1920
+PlayResY: 1080
+Collisions: Normal
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: English3,Calibri,54,&H00F8FFF4,&H000000FF,&H00703A22,&H19000000,0,0,0,0,100,100,0,0,1,2.3,0.8,2,30,30,24,1
+Style: Chinese3,Microsoft YaHei,69,&H00F8FFF4,&H0000FFFF,&H00703A22,&H19000000,0,0,0,0,100,100,0,0,1,2.5,0.8,2,30,30,77,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 1,0:00:02.56,0:00:04.00,Chinese3,NTP,0000,0000,0000,,今晚，在军法署...
+Dialogue: -1,0:00:02.56,0:00:04.00,English3,NTP,0000,0000,0000,,  Tonight, on JAG...
+Dialogue: 1,0:00:09.31,0:00:11.57,Chinese3,NTP,0000,0000,0000,,晚上好，我是诺曼·德拉波特
+Dialogue: -1,0:00:09.31,0:00:11.57,English3,NTP,0000,0000,0000,,Good evening, I'm Norman Delaporte.
+Dialogue: 1,0:00:11.66,0:00:13.23,Chinese3,NTP,0000,0000,0000,,您将看到的报告
+Dialogue: -1,0:00:11.66,0:00:13.23,English3,NTP,0000,0000,0000,,The report you are about to see
+Dialogue: 1,0:00:13.31,0:00:16.14,Chinese3,NTP,0000,0000,0000,,包含有关战争和死亡的详细描述
+Dialogue: -1,0:00:13.31,0:00:16.14,English3,NTP,0000,0000,0000,,contains graphic descriptions of war and death.
+Dialogue: 1,0:00:16.23,0:00:18.67,Chinese3,NTP,0000,0000,0000,,涉及到关于战争罪行的突发新闻
+Dialogue: -1,0:00:16.23,0:00:18.67,English3,NTP,0000,0000,0000,,It involves a breaking story about war crimes
+Dialogue: 1,0:00:18.75,0:00:22.06,Chinese3,NTP,0000,0000,0000,,由美国海军陆战队在沙漠风暴行动期间犯下
+Dialogue: -1,0:00:18.75,0:00:22.06,English3,NTP,0000,0000,0000,,committed by American marines during Operation Desert Storm
+Dialogue: 1,0:00:22.15,0:00:24.93,Chinese3,NTP,0000,0000,0000,,在科威特的埃尔巴卡尔基地
+Dialogue: -1,0:00:22.15,0:00:24.93,English3,NTP,0000,0000,0000,,here in Kuwait at the El Bakkar compound.
+Dialogue: 1,0:00:25.02,0:00:29.85,Chinese3,NTP,0000,0000,0000,,指控很严重；影响很大
+Dialogue: -1,0:00:25.02,0:00:29.85,English3,NTP,0000,0000,0000,,The accusations are serious; The repercussions, great.
+Dialogue: 1,0:00:31.20,0:00:33.55,Chinese3,NTP,0000,0000,0000,,您正在观看的录像是由一支海军陆战队侦察小组拍摄的
+Dialogue: -1,0:00:31.20,0:00:33.55,English3,NTP,0000,0000,0000,,The footage you are watching was shot by a marine force
+Dialogue: 1,0:00:33.64,0:00:36.29,Chinese3,NTP,0000,0000,0000,,他们在沙漠风暴地面战开始前一天被派往敌后
+Dialogue: -1,0:00:33.64,0:00:36.29,English3,NTP,0000,0000,0000,,recon team sent behind enemy lines the day before
+Dialogue: 1,0:00:36.38,0:00:39.25,Chinese3,NTP,0000,0000,0000,,该小组由克莱德·莫里森中士领导
+Dialogue: -1,0:00:36.38,0:00:39.25,English3,NTP,0000,0000,0000,,the ground-war phase of Desert Storm began.
+Dialogue: 1,0:00:39.34,0:00:42.34,Chinese3,NTP,0000,0000,0000,,消灭三名美国人
+Dialogue: -1,0:00:39.34,0:00:42.34,English3,NTP,0000,0000,0000,,The team was led by Sergeant Clyde Morrison.
+Dialogue: 1,0:00:42.43,0:00:46.08,Chinese3,NTP,0000,0000,0000,,战争罪行是由当时的二等中尉弗兰科·切法鲁发现的
+Dialogue: -1,0:00:42.43,0:00:46.08,English3,NTP,0000,0000,0000,,To eliminate three Americans.
+Dialogue: 1,0:00:46.17,0:00:47.69,Chinese3,NTP,0000,0000,0000,,两天前，我在弗吉尼亚北部的家中采访了弗兰科·切法鲁，
+Dialogue: -1,0:00:46.17,0:00:47.69,English3,NTP,0000,0000,0000,,The war crime was discovered
+Dialogue: 1,0:00:47.78,0:00:50.44,Chinese3,NTP,0000,0000,0000,,现在是一名海军陆战队上尉
+Dialogue: -1,0:00:47.78,0:00:50.44,English3,NTP,0000,0000,0000,,by then-second-Lieutenant Franco Cefalu.
+Dialogue: 1,0:00:50.52,0:00:53.31,Chinese3,NTP,0000,0000,0000,,我的部队在侦察部队突袭两天后占领了埃尔巴卡尔
+Dialogue: -1,0:00:50.52,0:00:53.31,English3,NTP,0000,0000,0000,,Two days ago, I interviewed Franco Cefalu,
+Dialogue: 1,0:00:53.40,0:00:56.75,Chinese3,NTP,0000,0000,0000,,你在五号建筑里发现了什么？
+Dialogue: -1,0:00:53.40,0:00:56.75,English3,NTP,0000,0000,0000,,now a marine captain, at his home in northern Virginia.
+Dialogue: 1,0:00:56.83,0:01:00.75,Chinese3,NTP,0000,0000,0000,,三名死去的美国人，
+Dialogue: -1,0:00:56.83,0:01:00.75,English3,NTP,0000,0000,0000,,My unit overran El Bakkar two days after the Force Recon raid.
+Dialogue: 1,0:01:00.84,0:01:02.93,Chinese3,NTP,0000,0000,0000,,与萨达姆·侯赛因合作的化学工程师
+Dialogue: -1,0:01:00.84,0:01:02.93,English3,NTP,0000,0000,0000,,  And what did you find in building five?
+Dialogue: 1,0:01:03.01,0:01:05.02,Chinese3,NTP,0000,0000,0000,,参与他的制造大规模杀伤性武器的计划
+Dialogue: -1,0:01:03.01,0:01:05.02,English3,NTP,0000,0000,0000,,  Three dead Americans,
+Dialogue: 1,0:01:05.10,0:01:07.06,Chinese3,NTP,0000,0000,0000,,这三个人是怎么死的？
+Dialogue: -1,0:01:05.10,0:01:07.06,English3,NTP,0000,0000,0000,,chemical engineers working with Saddam Hussein
+Dialogue: 1,0:01:07.15,0:01:10.15,Chinese3,NTP,0000,0000,0000,,死于沙林毒气的影响
+Dialogue: -1,0:01:07.15,0:01:10.15,English3,NTP,0000,0000,0000,,on his program to develop weapons of mass destruction.
+Dialogue: 1,0:01:10.24,0:01:12.28,Chinese3,NTP,0000,0000,0000,,那晚拍摄的视频
+Dialogue: -1,0:01:10.24,0:01:12.28,English3,NTP,0000,0000,0000,,  How did these three men die?
+Dialogue: 1,0:01:12.37,0:01:13.85,Chinese3,NTP,0000,0000,0000,,显示侦察部队包围了五号建筑
+Dialogue: -1,0:01:12.37,0:01:13.85,English3,NTP,0000,0000,0000,,From the effects of sarin gas.
+Dialogue: 1,0:01:14.55,0:01:16.29,Chinese3,NTP,0000,0000,0000,,遭到激烈抵抗，海军陆战队向建筑物发射了
+Dialogue: -1,0:01:14.55,0:01:16.29,English3,NTP,0000,0000,0000,,  Video footage shot that night
+Dialogue: 1,0:01:16.38,0:01:19.55,Chinese3,NTP,0000,0000,0000,,后来被证明是沙林毒气的罐子
+Dialogue: -1,0:01:16.38,0:01:19.55,English3,NTP,0000,0000,0000,,shows the Force Recon team surrounding building five.
+Dialogue: 1,0:01:19.64,0:01:22.34,Chinese3,NTP,0000,0000,0000,,录像在莫里森中士的命令下停止了
+Dialogue: -1,0:01:19.64,0:01:22.34,English3,NTP,0000,0000,0000,,Encountering fierce resistance, the marines fired canisters
+Dialogue: 1,0:01:22.43,0:01:25.69,Chinese3,NTP,0000,0000,0000,,停止！停下！停下来，离开这里！
+Dialogue: -1,0:01:22.43,0:01:25.69,English3,NTP,0000,0000,0000,,of what later proved to be sarin gas into the building.
+Dialogue: 1,0:01:26.60,0:01:27.87,Chinese3,NTP,0000,0000,0000,,机密情报文件显示
+Dialogue: -1,0:01:26.60,0:01:27.87,English3,NTP,0000,0000,0000,,That's when the taping stopped
+Dialogue: 1,0:01:27.95,0:01:29.43,Chinese3,NTP,0000,0000,0000,,美国军方知道这些工程师在埃尔巴卡尔的存在
+Dialogue: -1,0:01:27.95,0:01:29.43,English3,NTP,0000,0000,0000,,at Sergeant Morrison's order.
+Dialogue: 1,0:01:29.52,0:01:30.91,Chinese3,NTP,0000,0000,0000,,五角大楼的一位高层消息人士证实，这些人
+Dialogue: -1,0:01:29.52,0:01:30.91,English3,NTP,0000,0000,0000,,Stop! Stop it! Stop it and get out of here!
+Dialogue: 1,0:01:31.00,0:01:32.74,Chinese3,NTP,0000,0000,0000,,对我们的战争努力构成了严重威胁
+Dialogue: -1,0:01:31.00,0:01:32.74,English3,NTP,0000,0000,0000,,Classified intelligence documents indicate
+Dialogue: 1,0:01:32.83,0:01:34.83,Chinese3,NTP,0000,0000,0000,,海军陆战队有四人伤亡
+Dialogue: -1,0:01:32.83,0:01:34.83,English3,NTP,0000,0000,0000,,that the American military knew of the presence
+Dialogue: 1,0:01:34.92,0:01:37.00,Chinese3,NTP,0000,0000,0000,,幸存者被直升机空运出去
+Dialogue: -1,0:01:34.92,0:01:37.00,English3,NTP,0000,0000,0000,,of these engineers at El Bakkar.
+Dialogue: 1,0:01:37.09,0:01:40.01,Chinese3,NTP,0000,0000,0000,,理查德·福特中士是机组长和炮手
+Dialogue: -1,0:01:37.09,0:01:40.01,English3,NTP,0000,0000,0000,,A source high up in the Pentagon confirmed that these men
+Dialogue: 1,0:01:40.10,0:01:42.40,Chinese3,NTP,0000,0000,0000,,中士，你撤离的海军陆战队员
+Dialogue: -1,0:01:40.10,0:01:42.40,English3,NTP,0000,0000,0000,,posed a serious threat to our war effort.
+Dialogue: 1,0:01:43.23,0:01:45.49,Chinese3,NTP,0000,0000,0000,,从埃尔巴卡尔带走了沙林毒气吗？
+Dialogue: -1,0:01:43.23,0:01:45.49,English3,NTP,0000,0000,0000,,The marines suffered four casualties.
+Dialogue: 1,0:01:45.58,0:01:47.89,Chinese3,NTP,0000,0000,0000,,是的，先生，莫里森中士带走了，先生
+Dialogue: -1,0:01:45.58,0:01:47.89,English3,NTP,0000,0000,0000,,The survivors were airlifted out by helicopter.
+Dialogue: 1,0:01:47.97,0:01:50.80,Chinese3,NTP,0000,0000,0000,,你怎么知道的？
+Dialogue: -1,0:01:47.97,0:01:50.80,English3,NTP,0000,0000,0000,,Sergeant Richard Ford was crew chief and gunner.
+Dialogue: 1,0:01:50.89,0:01:53.37,Chinese3,NTP,0000,0000,0000,,他把它放在他的子弹带里，先生
+Dialogue: -1,0:01:50.89,0:01:53.37,English3,NTP,0000,0000,0000,,  Sergeant, did the marines you evacuated
+Dialogue: 1,0:01:53.46,0:01:55.63,Chinese3,NTP,0000,0000,0000,,我们将在一分钟后回来，带来五角大楼的反应
+Dialogue: -1,0:01:53.46,0:01:55.63,English3,NTP,0000,0000,0000,,from El Bakkar carry sarin gas?
+Dialogue: 1,0:01:55.72,0:01:58.42,Chinese3,NTP,0000,0000,0000,,Yes, sir, Sergeant Morrison did, sir.
+Dialogue: -1,0:01:55.72,0:01:58.42,English3,NTP,0000,0000,0000,,Yes, sir, Sergeant Morrison did, sir.
+Dialogue: 1,0:01:58.50,0:01:59.98,Chinese3,NTP,0000,0000,0000,,  And how do you know that?
+Dialogue: -1,0:01:58.50,0:01:59.98,English3,NTP,0000,0000,0000,,  And how do you know that?
+Dialogue: 1,0:02:00.07,0:02:01.77,Chinese3,NTP,0000,0000,0000,,He had it in his bandolier, sir.
+Dialogue: -1,0:02:00.07,0:02:01.77,English3,NTP,0000,0000,0000,,He had it in his bandolier, sir.
+Dialogue: 1,0:02:01.86,0:02:04.90,Chinese3,NTP,0000,0000,0000,,We'll be back in a minute with reaction from the Pentagon.
+Dialogue: -1,0:02:01.86,0:02:04.90,English3,NTP,0000,0000,0000,,We'll be back in a minute with reaction from the Pentagon.
+Dialogue: 1,0:02:04.99,0:02:06.56,Chinese3,NTP,0000,0000,0000,,这些指控很严重...
+Dialogue: -1,0:02:04.99,0:02:06.56,English3,NTP,0000,0000,0000,,The charges are serious...
+Dialogue: 1,0:02:06.64,0:02:09.91,Chinese3,NTP,0000,0000,0000,,美国人使用化学武器杀死其他美国人
+Dialogue: -1,0:02:06.64,0:02:09.91,English3,NTP,0000,0000,0000,,Americans using chemical weapons to kill other Americans.
+Dialogue: 1,0:03:08.57,0:03:10.79,Chinese3,NTP,0000,0000,0000,,好吧，我会考虑行政解雇
+Dialogue: -1,0:03:08.57,0:03:10.79,English3,NTP,0000,0000,0000,,Well, I'll consider an administrative discharge.
+Dialogue: 1,0:03:10.88,0:03:12.19,Chinese3,NTP,0000,0000,0000,,今天你最多能得到三年
+Dialogue: -1,0:03:10.88,0:03:12.19,English3,NTP,0000,0000,0000,,Three's the best you're going to get today.
+Dialogue: 1,0:03:12.27,0:03:14.01,Chinese3,NTP,0000,0000,0000,,-几个月？ -几年
+Dialogue: -1,0:03:12.27,0:03:14.01,English3,NTP,0000,0000,0000,,-Months? -Years.
+Dialogue: 1,0:03:14.10,0:03:15.41,Chinese3,NTP,0000,0000,0000,,你一定是在开玩笑
+Dialogue: -1,0:03:14.10,0:03:15.41,English3,NTP,0000,0000,0000,,You've got to be kidding.
+Dialogue: 1,0:03:15.49,0:03:16.67,Chinese3,NTP,0000,0000,0000,,哈姆，埃尔斯沃斯下士偷了一辆推土机
+Dialogue: -1,0:03:15.49,0:03:16.67,English3,NTP,0000,0000,0000,,Harm, Petty Officer Ellsworth stole
+Dialogue: 1,0:03:16.76,0:03:18.11,Chinese3,NTP,0000,0000,0000,,从一个保密设施里
+Dialogue: -1,0:03:16.76,0:03:18.11,English3,NTP,0000,0000,0000,,a bulldozer from a secured facility
+Dialogue: 1,0:03:18.19,0:03:19.32,Chinese3,NTP,0000,0000,0000,,并摧毁了他当地国会议员的竞选总部
+Dialogue: -1,0:03:18.19,0:03:19.32,English3,NTP,0000,0000,0000,,and destroyed the campaign headquarters
+Dialogue: 1,0:03:19.41,0:03:20.63,Chinese3,NTP,0000,0000,0000,,这是一种看法
+Dialogue: -1,0:03:19.41,0:03:20.63,English3,NTP,0000,0000,0000,,of his local congressman.
+Dialogue: 1,0:03:20.72,0:03:21.98,Chinese3,NTP,0000,0000,0000,,我没有时间争论
+Dialogue: -1,0:03:20.72,0:03:21.98,English3,NTP,0000,0000,0000,,That's one way of looking at it.
+Dialogue: 1,0:03:22.07,0:03:23.89,Chinese3,NTP,0000,0000,0000,,我得去接那个澳大利亚交流军官
+Dialogue: -1,0:03:22.07,0:03:23.89,English3,NTP,0000,0000,0000,,I don't have time to argue.
+Dialogue: 1,0:03:23.98,0:03:25.03,Chinese3,NTP,0000,0000,0000,,布朗比少校
+Dialogue: -1,0:03:23.98,0:03:25.03,English3,NTP,0000,0000,0000,,I've got to go pick up that Australian exchange officer
+Dialogue: 1,0:03:25.11,0:03:26.38,Chinese3,NTP,0000,0000,0000,,-让巴德去！ -我听说布朗比很帅
+Dialogue: -1,0:03:25.11,0:03:26.38,English3,NTP,0000,0000,0000,,Lieutenant Commander brumby.
+Dialogue: 1,0:03:26.46,0:03:29.12,Chinese3,NTP,0000,0000,0000,,麦可，埃尔斯沃斯下士
+Dialogue: -1,0:03:26.46,0:03:29.12,English3,NTP,0000,0000,0000,,-Send Bud! -I hear brumby's cute.
+Dialogue: 1,0:03:29.20,0:03:31.16,Chinese3,NTP,0000,0000,0000,,是在发表政治声明
+Dialogue: -1,0:03:29.20,0:03:31.16,English3,NTP,0000,0000,0000,,Mac, Petty Officer Ellsworth
+Dialogue: 1,0:03:31.25,0:03:33.51,Chinese3,NTP,0000,0000,0000,,国会不会批准军人的加薪
+Dialogue: -1,0:03:31.25,0:03:33.51,English3,NTP,0000,0000,0000,,was making a political statement.
+Dialogue: 1,0:03:33.60,0:03:35.73,Chinese3,NTP,0000,0000,0000,,所以他的行为受到言论自由的保护？
+Dialogue: -1,0:03:33.60,0:03:35.73,English3,NTP,0000,0000,0000,,Congress won't approve pay raises for the military.
+Dialogue: 1,0:03:35.82,0:03:38.39,Chinese3,NTP,0000,0000,0000,,不，但我不认为监禁能实现正义
+Dialogue: -1,0:03:35.82,0:03:38.39,English3,NTP,0000,0000,0000,,So his actions are protected under free speech?
+Dialogue: 1,0:03:38.47,0:03:41.26,Chinese3,NTP,0000,0000,0000,,再想想
+Dialogue: -1,0:03:38.47,0:03:41.26,English3,NTP,0000,0000,0000,,No, but I don't think justice is served with brig time.
+Dialogue: 1,0:03:42.22,0:03:43.48,Chinese3,NTP,0000,0000,0000,,感谢您在这么短的时间内见我，将军
+Dialogue: -1,0:03:42.22,0:03:43.48,English3,NTP,0000,0000,0000,,Think again.
+Dialogue: 1,0:03:45.44,0:03:47.48,Chinese3,NTP,0000,0000,0000,,我很乐意来找您，女议员
+Dialogue: -1,0:03:45.44,0:03:47.48,English3,NTP,0000,0000,0000,,Thanks for seeing me on such short notice, admiral.
+Dialogue: 1,0:03:47.57,0:03:49.27,Chinese3,NTP,0000,0000,0000,,我想要这次会面不被记录，AJ
+Dialogue: -1,0:03:47.57,0:03:49.27,English3,NTP,0000,0000,0000,,I'd have been glad to come to you, congresswoman.
+Dialogue: 1,0:03:49.35,0:03:51.10,Chinese3,NTP,0000,0000,0000,,众议院国家安全小组委员会
+Dialogue: -1,0:03:49.35,0:03:51.10,English3,NTP,0000,0000,0000,,I wanted this off the record, AJ
+Dialogue: 1,0:03:52.05,0:03:54.62,Chinese3,NTP,0000,0000,0000,,下周将举行听证会
+Dialogue: -1,0:03:52.05,0:03:54.62,English3,NTP,0000,0000,0000,,The house national security subcommittee
+Dialogue: 1,0:03:54.71,0:03:56.54,Chinese3,NTP,0000,0000,0000,,我们打算查明是否有海军陆战队侦察部队
+Dialogue: -1,0:03:54.71,0:03:56.54,English3,NTP,0000,0000,0000,,is holding hearings next week.
+Dialogue: 1,0:03:56.62,0:03:59.71,Chinese3,NTP,0000,0000,0000,,使用化学武器暗杀
+Dialogue: -1,0:03:56.62,0:03:59.71,English3,NTP,0000,0000,0000,,We intend to find out whether a marine team recon force
+Dialogue: 1,0:03:59.80,0:04:01.45,Chinese3,NTP,0000,0000,0000,,三名为萨达姆武器计划工作的
+Dialogue: -1,0:03:59.80,0:04:01.45,English3,NTP,0000,0000,0000,,used chemical weapons to assassinate
+Dialogue: 1,0:04:01.54,0:04:04.20,Chinese3,NTP,0000,0000,0000,,美国叛逃平民工程师
+Dialogue: -1,0:04:01.54,0:04:04.20,English3,NTP,0000,0000,0000,,three renegade American civilian engineers
+Dialogue: 1,0:04:04.28,0:04:05.94,Chinese3,NTP,0000,0000,0000,,我昨晚见过德拉波特
+Dialogue: -1,0:04:04.28,0:04:05.94,English3,NTP,0000,0000,0000,,working on Saddam's weapons programs.
+Dialogue: 1,0:04:06.02,0:04:08.24,Chinese3,NTP,0000,0000,0000,,你真的相信那个故事吗？
+Dialogue: -1,0:04:06.02,0:04:08.24,English3,NTP,0000,0000,0000,,I saw Delaporte last night.
+Dialogue: 1,0:04:08.33,0:04:10.42,Chinese3,NTP,0000,0000,0000,,我认为这是有可能的
+Dialogue: -1,0:04:08.33,0:04:10.42,English3,NTP,0000,0000,0000,,You don't actually believe that story, do you?
+Dialogue: 1,0:04:10.51,0:04:11.81,Chinese3,NTP,0000,0000,0000,,无论如何
+Dialogue: -1,0:04:10.51,0:04:11.81,English3,NTP,0000,0000,0000,,I believe it's plausible.
+Dialogue: 1,0:04:11.90,0:04:13.29,Chinese3,NTP,0000,0000,0000,,我需要知道它是否可以证实
+Dialogue: -1,0:04:11.90,0:04:13.29,English3,NTP,0000,0000,0000,,One way or another
+Dialogue: 1,0:04:13.38,0:04:14.68,Chinese3,NTP,0000,0000,0000,,五角大楼正在调查此事
+Dialogue: -1,0:04:13.38,0:04:14.68,English3,NTP,0000,0000,0000,,I need to know if it can be substantiated.
+Dialogue: 1,0:04:15.08,0:04:16.12,Chinese3,NTP,0000,0000,0000,,这就像让狐狸去数鸡一样
+Dialogue: -1,0:04:15.08,0:04:16.12,English3,NTP,0000,0000,0000,,Pentagon's looking into it.
+Dialogue: 1,0:04:17.86,0:04:21.34,Chinese3,NTP,0000,0000,0000,,这就是为什么我的委员会将举行会议
+Dialogue: -1,0:04:17.86,0:04:21.34,English3,NTP,0000,0000,0000,,That like sending the fox in to count the chickens.
+Dialogue: 1,0:04:21.43,0:04:24.17,Chinese3,NTP,0000,0000,0000,,并向国会提交报告
+Dialogue: -1,0:04:21.43,0:04:24.17,English3,NTP,0000,0000,0000,,And that's why my committee will hold meetings
+Dialogue: 1,0:04:24.26,0:04:26.09,Chinese3,NTP,0000,0000,0000,,那么，在这种情况下，女士，您需要我做什么？
+Dialogue: -1,0:04:24.26,0:04:26.09,English3,NTP,0000,0000,0000,,and will forward a report to congress.
+Dialogue: 1,0:04:26.65,0:04:28.79,Chinese3,NTP,0000,0000,0000,,我希望小哈蒙·拉布海军少校被分配到我的团队
+Dialogue: -1,0:04:26.65,0:04:28.79,English3,NTP,0000,0000,0000,,Well, in that case, ma'am, what do you need from me?
+Dialogue: 1,0:04:28.87,0:04:30.92,Chinese3,NTP,0000,0000,0000,,进行临时工作
+Dialogue: -1,0:04:28.87,0:04:30.92,English3,NTP,0000,0000,0000,,I want Lieutenant Commander Rabb assigned to my staff
+Dialogue: 1,0:04:31.00,0:04:32.05,Chinese3,NTP,0000,0000,0000,,女士，我很乐意合作
+Dialogue: -1,0:04:31.00,0:04:32.05,English3,NTP,0000,0000,0000,,on temporary duty.
+Dialogue: 1,0:04:32.14,0:04:33.70,Chinese3,NTP,0000,0000,0000,,但拉布少校的案件负担很重。我需要他
+Dialogue: -1,0:04:32.14,0:04:33.70,English3,NTP,0000,0000,0000,,Ma'am, I'd love to cooperate
+Dialogue: 1,0:04:33.79,0:04:36.75,Chinese3,NTP,0000,0000,0000,,我也需要他，AJ
+Dialogue: -1,0:04:33.79,0:04:36.75,English3,NTP,0000,0000,0000,,but Commander Rabb's caseload is full. I need him.
+Dialogue: 1,0:04:36.84,0:04:38.19,Chinese3,NTP,0000,0000,0000,,这是一件复杂的事情
+Dialogue: -1,0:04:36.84,0:04:38.19,English3,NTP,0000,0000,0000,,I need him, too, AJ
+Dialogue: 1,0:04:38.27,0:04:39.97,Chinese3,NTP,0000,0000,0000,,这是一个复杂的话题
+Dialogue: -1,0:04:38.27,0:04:39.97,English3,NTP,0000,0000,0000,,This is a complex subject.
+Dialogue: 1,0:04:40.06,0:04:41.67,Chinese3,NTP,0000,0000,0000,,很多人会撒谎
+Dialogue: -1,0:04:40.06,0:04:41.67,English3,NTP,0000,0000,0000,,A lot of people are going to lie.
+Dialogue: 1,0:04:41.75,0:04:44.28,Chinese3,NTP,0000,0000,0000,,我需要一个能识别真相的人
+Dialogue: -1,0:04:41.75,0:04:44.28,English3,NTP,0000,0000,0000,,I need to have someone who'll recognize the truth.
+Dialogue: 1,0:04:45.11,0:04:47.50,Chinese3,NTP,0000,0000,0000,,此外，我会欠你一个人情
+Dialogue: -1,0:04:45.11,0:04:47.50,English3,NTP,0000,0000,0000,,Besides, I'll owe you one.
+Dialogue: 1,0:04:50.63,0:04:52.72,Chinese3,NTP,0000,0000,0000,,而且我一定会兑现，女士
+Dialogue: -1,0:04:50.63,0:04:52.72,English3,NTP,0000,0000,0000,,And I have every intention of collecting, ma'am.
+Dialogue: 1,0:04:54.38,0:04:57.81,Chinese3,NTP,0000,0000,0000,,宣布从悉尼抵达的274航班
+Dialogue: -1,0:04:54.38,0:04:57.81,English3,NTP,0000,0000,0000,,Announcing the arrival of flight 274 from Sydney
+Dialogue: 1,0:04:57.90,0:04:59.25,Chinese3,NTP,0000,0000,0000,,在20b登机口
+Dialogue: -1,0:04:57.90,0:04:59.25,English3,NTP,0000,0000,0000,,at gate 20b.
+Dialogue: 1,0:05:03.08,0:05:04.78,Chinese3,NTP,0000,0000,0000,,此时我们想优先登机
+Dialogue: -1,0:05:03.08,0:05:04.78,English3,NTP,0000,0000,0000,,At this time we'd like to pre-board
+Dialogue: 1,0:05:04.86,0:05:07.56,Chinese3,NTP,0000,0000,0000,,前往巴塞罗那的676航班
+Dialogue: -1,0:05:04.86,0:05:07.56,English3,NTP,0000,0000,0000,,flight number 676 to Barcelona.
+Dialogue: 1,0:05:07.65,0:05:09.30,Chinese3,NTP,0000,0000,0000,,您可以通过11号登机口登机
+Dialogue: -1,0:05:07.65,0:05:09.30,English3,NTP,0000,0000,0000,,You may board through gate 11.
+Dialogue: 1,0:05:11.04,0:05:12.26,Chinese3,NTP,0000,0000,0000,,保重
+Dialogue: -1,0:05:11.04,0:05:12.26,English3,NTP,0000,0000,0000,,Be safe.
+Dialogue: 1,0:05:13.26,0:05:16.31,Chinese3,NTP,0000,0000,0000,,你好！我是军法署的萨拉·麦肯齐少校
+Dialogue: -1,0:05:13.26,0:05:16.31,English3,NTP,0000,0000,0000,,Hi! I'm Major Sarah MacKenzie, JAG corp.
+Dialogue: 1,0:05:16.40,0:05:18.44,Chinese3,NTP,0000,0000,0000,,-什么？ -不好意思
+Dialogue: -1,0:05:16.40,0:05:18.44,English3,NTP,0000,0000,0000,,-Sorry? -Excuse me.
+Dialogue: 1,0:05:18.53,0:05:21.53,Chinese3,NTP,0000,0000,0000,,不，不好意思。我在和别人说话
+Dialogue: -1,0:05:18.53,0:05:21.53,English3,NTP,0000,0000,0000,,No, excuse me. I'm talking to someone.
+Dialogue: 1,0:05:21.62,0:05:22.80,Chinese3,NTP,0000,0000,0000,,我被要求在这里接你
+Dialogue: -1,0:05:21.62,0:05:22.80,English3,NTP,0000,0000,0000,,I was asked to meet you here.
+Dialogue: 1,0:05:22.88,0:05:24.10,Chinese3,NTP,0000,0000,0000,,真的吗？
+Dialogue: -1,0:05:22.88,0:05:24.10,English3,NTP,0000,0000,0000,,Really?
+Dialogue: 1,0:05:24.19,0:05:25.45,Chinese3,NTP,0000,0000,0000,,少校...
+Dialogue: -1,0:05:24.19,0:05:25.45,English3,NTP,0000,0000,0000,,Major...
+Dialogue: 1,0:05:25.54,0:05:27.10,Chinese3,NTP,0000,0000,0000,,听着，我不在乎你和那边的朋友
+Dialogue: -1,0:05:25.54,0:05:27.10,English3,NTP,0000,0000,0000,,Look, I don't care what kind of wager
+Dialogue: 1,0:05:27.19,0:05:29.24,Chinese3,NTP,0000,0000,0000,,打了什么赌。别烦我
+Dialogue: -1,0:05:27.19,0:05:29.24,English3,NTP,0000,0000,0000,,you made with your pals over there. Leave me alone.
+Dialogue: 1,0:05:29.32,0:05:30.46,Chinese3,NTP,0000,0000,0000,,赌注？
+Dialogue: -1,0:05:29.32,0:05:30.46,English3,NTP,0000,0000,0000,,Wager?
+Dialogue: 1,0:05:30.54,0:05:33.07,Chinese3,NTP,0000,0000,0000,,我可以带你去任何你想去的地方
+Dialogue: -1,0:05:30.54,0:05:33.07,English3,NTP,0000,0000,0000,,I can take you anywhere you want to go.
+Dialogue: 1,0:05:33.15,0:05:34.72,Chinese3,NTP,0000,0000,0000,,这是个有趣的提议
+Dialogue: -1,0:05:33.15,0:05:34.72,English3,NTP,0000,0000,0000,,Now, that's an interesting offer.
+Dialogue: 1,0:05:34.81,0:05:37.11,Chinese3,NTP,0000,0000,0000,,很高兴见到你，布伦比少校
+Dialogue: -1,0:05:34.81,0:05:37.11,English3,NTP,0000,0000,0000,,It's a real pleasure to meet you, Commander Brumby.
+Dialogue: 1,0:05:37.20,0:05:39.46,Chinese3,NTP,0000,0000,0000,,-布伦比？ -很高兴见到你，少校
+Dialogue: -1,0:05:37.20,0:05:39.46,English3,NTP,0000,0000,0000,,-Brumby? -The pleasure's all mine, major.
+Dialogue: 1,0:05:39.55,0:05:41.42,Chinese3,NTP,0000,0000,0000,,我在航班上遇到了一些朋友
+Dialogue: -1,0:05:39.55,0:05:41.42,English3,NTP,0000,0000,0000,,I ran into some mates on the flight.
+Dialogue: 1,0:05:41.51,0:05:42.82,Chinese3,NTP,0000,0000,0000,,我们聊得很开心
+Dialogue: -1,0:05:41.51,0:05:42.82,English3,NTP,0000,0000,0000,,We were gas-bagging it.
+Dialogue: 1,0:05:44.03,0:05:45.51,Chinese3,NTP,0000,0000,0000,,我不是布伦比少校
+Dialogue: -1,0:05:44.03,0:05:45.51,English3,NTP,0000,0000,0000,,I'm not Commander Brumby
+Dialogue: 1,0:05:45.60,0:05:47.65,Chinese3,NTP,0000,0000,0000,,但我会在城里待几天
+Dialogue: -1,0:05:45.60,0:05:47.65,English3,NTP,0000,0000,0000,,but I willbe in town for a few days.
+Dialogue: 1,0:05:48.04,0:05:49.65,Chinese3,NTP,0000,0000,0000,,你可以在希尔顿找到我
+Dialogue: -1,0:05:48.04,0:05:49.65,English3,NTP,0000,0000,0000,,You can reach me at the Hilton.
+Dialogue: 1,0:05:49.74,0:05:52.17,Chinese3,NTP,0000,0000,0000,,好吧，你交了个朋友
+Dialogue: -1,0:05:49.74,0:05:52.17,English3,NTP,0000,0000,0000,,Well, you made yourself a friend.
+Dialogue: 1,0:05:52.26,0:05:55.39,Chinese3,NTP,0000,0000,0000,,非常抱歉。嗯，萨拉·麦肯齐
+Dialogue: -1,0:05:52.26,0:05:55.39,English3,NTP,0000,0000,0000,,I'm so sorry. Um, Sarah MacKenzie.
+Dialogue: 1,0:05:55.48,0:05:56.87,Chinese3,NTP,0000,0000,0000,,这是个诚实的错误
+Dialogue: -1,0:05:55.48,0:05:56.87,English3,NTP,0000,0000,0000,,It was an honest mistake.
+Dialogue: 1,0:05:56.96,0:05:59.27,Chinese3,NTP,0000,0000,0000,,米克·布伦比
+Dialogue: -1,0:05:56.96,0:05:59.27,English3,NTP,0000,0000,0000,,Mic brumby.
+Dialogue: 1,0:05:59.35,0:06:00.66,Chinese3,NTP,0000,0000,0000,,好吧，你想去哪儿...
+Dialogue: -1,0:05:59.35,0:06:00.66,English3,NTP,0000,0000,0000,,Well, where would you like to go...
+Dialogue: 1,0:06:00.75,0:06:02.53,Chinese3,NTP,0000,0000,0000,,嗯，办公室还是酒店？
+Dialogue: -1,0:06:00.75,0:06:02.53,English3,NTP,0000,0000,0000,,Um, office or hotel?
+Dialogue: 1,0:06:02.62,0:06:04.05,Chinese3,NTP,0000,0000,0000,,先去酒店，然后去办公室
+Dialogue: -1,0:06:02.62,0:06:04.05,English3,NTP,0000,0000,0000,,Hotel, then the office.
+Dialogue: 1,0:06:04.14,0:06:05.80,Chinese3,NTP,0000,0000,0000,,不如直接开始工作
+Dialogue: -1,0:06:04.14,0:06:05.80,English3,NTP,0000,0000,0000,,Might as well get straight down to the cases.
+Dialogue: 1,0:06:05.88,0:06:07.75,Chinese3,NTP,0000,0000,0000,,我喜欢有工作热情的人
+Dialogue: -1,0:06:05.88,0:06:07.75,English3,NTP,0000,0000,0000,,I like a man with a hard work ethic.
+Dialogue: 1,0:06:08.36,0:06:10.15,Chinese3,NTP,0000,0000,0000,,当我还是个孩子的时候
+Dialogue: -1,0:06:08.36,0:06:10.15,English3,NTP,0000,0000,0000,,When I was a kid
+Dialogue: 1,0:06:10.23,0:06:13.80,Chinese3,NTP,0000,0000,0000,,我从没想过我会在这个地方附近
+Dialogue: -1,0:06:10.23,0:06:13.80,English3,NTP,0000,0000,0000,,I never dreamed I'd be anywhere near this place.
+Dialogue: 1,0:06:13.89,0:06:15.85,Chinese3,NTP,0000,0000,0000,,当我还是个孩子的时候，这就是我梦寐以求的
+Dialogue: -1,0:06:13.89,0:06:15.85,English3,NTP,0000,0000,0000,,When I was a kid, it was all I dreamt about.
+Dialogue: 1,0:06:17.94,0:06:18.98,Chinese3,NTP,0000,0000,0000,,那么我们从哪里开始？
+Dialogue: -1,0:06:17.94,0:06:18.98,English3,NTP,0000,0000,0000,,So where do we start?
+Dialogue: 1,0:06:19.07,0:06:20.81,Chinese3,NTP,0000,0000,0000,,诺曼·德拉波特
+Dialogue: -1,0:06:19.07,0:06:20.81,English3,NTP,0000,0000,0000,,  Norman Delaporte.
+Dialogue: 1,0:06:20.90,0:06:22.25,Chinese3,NTP,0000,0000,0000,,你真的认为这很聪明吗
+Dialogue: -1,0:06:20.90,0:06:22.25,English3,NTP,0000,0000,0000,,You really think that's smart
+Dialogue: 1,0:06:22.33,0:06:23.77,Chinese3,NTP,0000,0000,0000,,考虑到我们没有所有的事实？
+Dialogue: -1,0:06:22.33,0:06:23.77,English3,NTP,0000,0000,0000,,considering we don't have all the facts?
+Dialogue: 1,0:06:23.86,0:06:25.64,Chinese3,NTP,0000,0000,0000,,这正是我们要和他谈的原因
+Dialogue: -1,0:06:23.86,0:06:25.64,English3,NTP,0000,0000,0000,,That's exactly why we're talking to him.
+Dialogue: 1,0:06:26.51,0:06:29.12,Chinese3,NTP,0000,0000,0000,,我通常不从记者那里获取事实
+Dialogue: -1,0:06:26.51,0:06:29.12,English3,NTP,0000,0000,0000,,I don't usually get my facts from a reporter.
+Dialogue: 1,0:06:29.21,0:06:31.08,Chinese3,NTP,0000,0000,0000,,哈姆，诺曼不仅仅是个记者
+Dialogue: -1,0:06:29.21,0:06:31.08,English3,NTP,0000,0000,0000,,Harm, Norman's not just a reporter.
+Dialogue: 1,0:06:31.17,0:06:32.78,Chinese3,NTP,0000,0000,0000,,他是一个机构
+Dialogue: -1,0:06:31.17,0:06:32.78,English3,NTP,0000,0000,0000,,He's an institution.
+Dialogue: 1,0:06:32.87,0:06:34.56,Chinese3,NTP,0000,0000,0000,,此外，他们不会因为错误而给你皮博迪奖和普利策奖
+Dialogue: -1,0:06:32.87,0:06:34.56,English3,NTP,0000,0000,0000,,Besides, they don't give you a peabody and a pulitzer
+Dialogue: 1,0:06:34.65,0:06:36.04,Chinese3,NTP,0000,0000,0000,,for being wrong.
+Dialogue: -1,0:06:34.65,0:06:36.04,English3,NTP,0000,0000,0000,,for being wrong.
+Dialogue: 1,0:06:36.13,0:06:38.09,Chinese3,NTP,0000,0000,0000,,无论如何，我认识他
+Dialogue: -1,0:06:36.13,0:06:38.09,English3,NTP,0000,0000,0000,,Anyway, I know him.
+Dialogue: 1,0:06:38.18,0:06:39.70,Chinese3,NTP,0000,0000,0000,,也许这就是让我担心的原因
+Dialogue: -1,0:06:38.18,0:06:39.70,English3,NTP,0000,0000,0000,,Maybe that's what worries me.
+Dialogue: 1,0:06:44.22,0:06:46.66,Chinese3,NTP,0000,0000,0000,,是谁让您接触到这个故事的，德拉波特先生？
+Dialogue: -1,0:06:44.22,0:06:46.66,English3,NTP,0000,0000,0000,,Who put you on to this story, Mr. Delaporte?
+Dialogue: 1,0:06:46.75,0:06:49.14,Chinese3,NTP,0000,0000,0000,,是一个拒绝掩盖战争罪行的人...
+Dialogue: -1,0:06:46.75,0:06:49.14,English3,NTP,0000,0000,0000,,Someone who refused to cover up a war crime...
+Dialogue: 1,0:06:49.23,0:06:50.45,Chinese3,NTP,0000,0000,0000,,是一个希望我
+Dialogue: -1,0:06:49.23,0:06:50.45,English3,NTP,0000,0000,0000,,Someone who wanted me
+Dialogue: 1,0:06:50.54,0:06:52.54,Chinese3,NTP,0000,0000,0000,,找出那晚负责的人
+Dialogue: -1,0:06:50.54,0:06:52.54,English3,NTP,0000,0000,0000,,to find out who was responsible
+Dialogue: 1,0:06:52.62,0:06:53.93,Chinese3,NTP,0000,0000,0000,,并确保这种事情不会再次发生的人
+Dialogue: -1,0:06:52.62,0:06:53.93,English3,NTP,0000,0000,0000,,for what happened that night
+Dialogue: 1,0:06:54.02,0:06:56.11,Chinese3,NTP,0000,0000,0000,,and to make sure that it never happened again.
+Dialogue: -1,0:06:54.02,0:06:56.11,English3,NTP,0000,0000,0000,,and to make sure that it never happened again.
+Dialogue: 1,0:06:56.19,0:06:58.67,Chinese3,NTP,0000,0000,0000,,有人很忙
+Dialogue: -1,0:06:56.19,0:06:58.67,English3,NTP,0000,0000,0000,,Someone was busy.
+Dialogue: 1,0:06:58.76,0:07:00.07,Chinese3,NTP,0000,0000,0000,,那么您是如何获得
+Dialogue: -1,0:06:58.76,0:07:00.07,English3,NTP,0000,0000,0000,,So how did you get access
+Dialogue: 1,0:07:00.15,0:07:02.29,Chinese3,NTP,0000,0000,0000,,机密情报报告的访问权限的？
+Dialogue: -1,0:07:00.15,0:07:02.29,English3,NTP,0000,0000,0000,,to classified intelligence reports?
