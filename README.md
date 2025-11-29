@@ -566,7 +566,10 @@ Dialogue: -1,0:00:02.56,0:00:04.00,English3,NTP,0000,0000,0000,,Tonight, on JAG.
 Here are two polished versions—you can choose the tone you prefer:
 - **No compatibility with other API formats is guaranteed**: There are plans to support OpenAI-compatible APIs (e.g., NewAPI).
 
-## Future Enhancements
+## Future Enhancements (TODO)
+
+Priorty:
+- [ ] Global across eposides via series memory file/ Redis?
 
 Potential features for future versions:
 
