@@ -292,11 +292,46 @@ def split_user_prompt_and_glossary(text: str) -> Tuple[str, List[Dict[str, str]]
         "Use the following institutional correspondences:"
     }
 
+    in_comment = False
+
     for raw_line in text.splitlines():
         line = raw_line.rstrip("\n")
 
+        # Handle multi-line HTML comments <!-- ... -->
+        working = line
+        while True:
+            if in_comment:
+                end_idx = working.find("-->")
+                if end_idx == -1:
+                    # Entire line is inside a comment block; drop it
+                    working = ""
+                    break
+                # Strip comment block and continue scanning remainder
+                working = working[end_idx + 3 :]
+                in_comment = False
+                continue
+            else:
+                start_idx = working.find("<!--")
+                if start_idx == -1:
+                    break
+                end_idx = working.find("-->", start_idx + 4)
+                if end_idx == -1:
+                    # Comment starts here and continues on later lines
+                    working = working[:start_idx]
+                    in_comment = True
+                    break
+                # Remove inline comment and keep surrounding text
+                before = working[:start_idx]
+                after = working[end_idx + 3 :]
+                working = before + after
+                # Loop again in case there are multiple comment blocks
+
+        line = working
+
         # Drop section headers that only introduce the glossary list
         stripped = line.strip()
+        if not stripped:
+            continue
         if stripped in skip_prefixes:
             continue
 
