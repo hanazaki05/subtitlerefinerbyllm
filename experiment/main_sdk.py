@@ -72,6 +72,47 @@ def apply_corrections_to_global_pairs(
             pair.chinese = corrected.chinese
 
 
+def print_current_terminology(global_memory: GlobalMemory, show_user_defined: bool = True) -> None:
+    """
+    Print current terminology for debugging.
+
+    Args:
+        global_memory: Global memory object containing terminology
+        show_user_defined: Whether to show user-defined glossary (default: True)
+    """
+    print("\n  Current Terminology:")
+    print("  " + "=" * 58)
+
+    # User-defined glossary (authoritative) - only if requested
+    if show_user_defined:
+        if global_memory.user_glossary:
+            print("  📌 User-Defined Glossary (Authoritative):")
+            for entry in global_memory.user_glossary:
+                eng = entry.get("eng", "")
+                zh = entry.get("zh", "")
+                print(f"    • {eng} → {zh}")
+        else:
+            print("  📌 User-Defined Glossary: (none)")
+        print()  # Add blank line before learned glossary
+
+    # Learned glossary
+    if global_memory.glossary:
+        print(f"  🧠 Learned Glossary ({len(global_memory.glossary)} entries):")
+        for entry in global_memory.glossary:
+            eng = entry.get("eng", "")
+            zh = entry.get("zh", "")
+            entry_type = entry.get("type", "")
+            confidence = entry.get("confidence", "")
+
+            type_str = f" [{entry_type}]" if entry_type else ""
+            conf_str = f" (conf: {confidence})" if confidence else ""
+            print(f"    • {eng} → {zh}{type_str}{conf_str}")
+    else:
+        print("  🧠 Learned Glossary: (none yet)")
+
+    print("  " + "=" * 58)
+
+
 def estimate_base_prompt_tokens(config, global_memory: GlobalMemory) -> int:
     """
     Estimate tokens for base prompt (system prompt + memory).
@@ -203,6 +244,15 @@ def process_subtitles(
             try:
                 print(f"\nProcessing chunk {i+1}/{len(chunks)} ({len(chunk)} pairs)...")
 
+                # Determine if this is the first chunk
+                is_first_chunk = (i == 0)
+
+                # In -vvv mode, show terminology before processing
+                # First chunk: show user-defined + learned
+                # Subsequent chunks: only show learned (user-defined doesn't change)
+                if config.debug_prompts:
+                    print_current_terminology(global_memory, show_user_defined=is_first_chunk)
+
                 # Start timing
                 start_time = time.time()
 
@@ -210,7 +260,7 @@ def process_subtitles(
                 if use_streaming:
                     if config.debug_prompts:
                         # In debug mode, show header for real-time LLM output
-                        print("  LLM Output (real-time):")
+                        print("\n  LLM Output (real-time):")
                         print("  " + "-" * 58)
                         print("  ", end="", flush=True)
                     elif config.verbose:
@@ -221,7 +271,8 @@ def process_subtitles(
                         chunk,
                         global_memory,
                         config,
-                        chunk_callback=streaming_progress_callback
+                        chunk_callback=streaming_progress_callback,
+                        print_system_prompt=is_first_chunk  # Only print system prompt for first chunk
                     )
 
                     if config.debug_prompts or config.verbose:
@@ -232,7 +283,8 @@ def process_subtitles(
                     corrected_pairs, usage, response_text = refine_chunk_sdk(
                         chunk,
                         global_memory,
-                        config
+                        config,
+                        print_system_prompt=is_first_chunk  # Only print system prompt for first chunk
                     )
 
                 total_usage = accumulate_usage(total_usage, usage)
@@ -248,7 +300,9 @@ def process_subtitles(
                     print(f"  Time: {format_time(elapsed_time)}")
                     print()  # Add blank line for spacing
                     print_verbose_preview(response_text, usage.reasoning_tokens, clear_lines=0)
-                    if config.very_verbose:
+                    # Only show full response in non-streaming mode
+                    # (in streaming mode, content was already shown in real-time)
+                    if config.very_verbose and not use_streaming:
                         print("\n  Full API response:\n")
                         print(response_text.rstrip() if response_text else "[Empty response]")
                         print()

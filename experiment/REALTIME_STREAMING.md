@@ -44,7 +44,7 @@ Processing chunk 1/5 (30 pairs)...
 
 ---
 
-### Level 3: `-vvv` (Debug Mode - Real-time LLM Output)
+### Level 3: `-vvv` (Debug Mode - Real-time LLM Output + Terminology)
 ```bash
 python main_sdk.py input.ass output.ass --streaming -vvv
 ```
@@ -52,6 +52,19 @@ python main_sdk.py input.ass output.ass --streaming -vvv
 **Output:**
 ```
 Processing chunk 1/5 (30 pairs)...
+
+  Current Terminology:
+  ==========================================================
+  📌 User-Defined Glossary (Authoritative):
+    • Chris → 克里斯
+    • iOS → iOS
+
+  🧠 Learned Glossary (3 entries):
+    • JAG → JAG [organization] (conf: 0.85)
+    • Benny → 本尼 [person] (conf: 0.92)
+    • Washington → 华盛顿 [place] (conf: 0.88)
+  ==========================================================
+
   LLM Output (real-time):
   ----------------------------------------------------------
   [
@@ -73,12 +86,18 @@ Processing chunk 1/5 (30 pairs)...
 ```
 
 **Features:**
+- Shows **current terminology** before each chunk
+  - 📌 User-defined glossary (from custom_main_prompt.md)
+  - 🧠 Learned glossary (extracted by LLM with type and confidence)
 - Shows actual LLM output as it's generated
 - See JSON response stream in real-time
 - Useful for debugging formatting issues
 - Watch the model's "thinking" process
 
 **Use case:**
+- **Monitor terminology evolution** - See how glossary grows
+- Verify user-defined terms are loaded correctly
+- Check learned terms and their confidence levels
 - Debugging JSON formatting issues
 - Monitoring quality of corrections
 - Understanding model behavior
@@ -319,12 +338,27 @@ python main_sdk.py input.ass output.ass --streaming -vvv 2>&1 | tee output.log
 
 ## Summary
 
+### Streaming Mode
+
 | Flag | Output | Use Case |
 |------|--------|----------|
 | None | Silent | Production runs |
 | `-v` | Progress dots | Normal processing |
-| `-vv` | Full responses (after completion) | Detailed review |
-| `-vvv` | Real-time LLM output | Debugging, monitoring |
+| `-vv` | Progress dots + preview | Review with summary |
+| `-vvv` | **Terminology + Real-time LLM output** | **Debugging, monitoring terminology** |
+
+### Non-Streaming Mode
+
+| Flag | Output | Use Case |
+|------|--------|----------|
+| None | Silent | Production runs |
+| `-v` | Progress + preview | Normal processing |
+| `-vv` | Progress + preview + full response | Detailed review |
+| `-vvv` | Progress + preview + full response + system prompt | Deep debugging |
+
+**Key Difference:**
+- **Streaming mode**: Content shown in real-time, no duplicate full response
+- **Non-streaming mode**: Full response shown at the end with `-vv`/`-vvv`
 
 **Recommendation:** Start with `-v`, upgrade to `-vvv` when debugging.
 

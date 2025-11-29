@@ -177,7 +177,8 @@ def call_openai_api_sdk(
 def refine_chunk_sdk(
     pairs_chunk: List[SubtitlePair],
     global_memory: GlobalMemory,
-    config: ConfigSDK
+    config: ConfigSDK,
+    print_system_prompt: bool = False
 ) -> Tuple[List[SubtitlePair], UsageStats, str]:
     """
     Refine a chunk of subtitle pairs using OpenAI SDK.
@@ -186,6 +187,7 @@ def refine_chunk_sdk(
         pairs_chunk: List of SubtitlePair objects to refine
         global_memory: Current global memory
         config: ConfigSDK object
+        print_system_prompt: Whether to print system prompt in debug mode (default: False)
 
     Returns:
         Tuple of (corrected_pairs, usage_stats, response_text)
@@ -206,7 +208,8 @@ def refine_chunk_sdk(
         {"role": "user", "content": user_content}
     ]
 
-    if getattr(config, "debug_prompts", False):
+    # Only print system prompt if explicitly requested
+    if print_system_prompt and getattr(config, "debug_prompts", False):
         print("\n  System prompt (debug):\n")
         print(system_content.rstrip() if system_content else "[Empty system prompt]")
         print()
