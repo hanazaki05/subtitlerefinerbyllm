@@ -607,3 +607,91 @@ Test 4: No override (use YAML default)   ✅ PASSED
 ✅ 文档更新
 ✅ 向后兼容
 ✅ 生产就绪
+
+
+========================================
+✅ 模板式 Prompt 系统 (plan3.md) - 完成总结
+========================================
+
+功能概述：
+-----------
+实现基于单一 markdown 模板文件 (`main_prompt.md`) 的系统提示生成策略。
+所有规则、示例和术语都在一个文件中定义，术语部分动态注入。
+
+修改的文件：
+-----------
+
+1. prompts.py
+   ✓ 新增 load_main_prompt_template(config) - 从配置加载模板
+   ✓ 新增 inject_memory_into_template() - 注入术语到模板
+   ✓ 新增辅助函数: _normalize_section_title(), _parse_template_glossary(),
+     _find_section_boundaries(), _merge_glossaries(), _build_terminology_section(),
+     _renumber_sections()
+   ✓ 修改 build_system_prompt(global_memory, config=None) 支持新策略
+   ✓ 保留 build_system_prompt_legacy() 作为 fallback
+
+2. experiment/llm_client_sdk.py
+   ✓ refine_chunk_sdk() 传递 config 到 build_system_prompt()
+   ✓ refine_chunk_sdk_streaming() 传递 config 到 build_system_prompt()
+
+3. experiment/main_sdk.py
+   ✓ 移除旧的 split_user_prompt_and_glossary 和 set_user_instruction 调用
+   ✓ estimate_base_prompt_tokens() 传递 config 参数
+
+4. experiment/config.yaml
+   ✓ user.prompt_path 从 "custom_main_prompt.md" 改为 "main_prompt.md"
+
+5. experiment/CONFIG_YAML.md
+   ✓ 更新 User Customization 部分说明模板系统
+
+6. experiment/README.md
+   ✓ 添加 Template-Based Prompt System 部分
+
+模板结构：
+-----------
+main_prompt.md 使用 markdown ### 标题划分章节：
+
+  ### 1. English Subtitle Rules
+  ### 2. Chinese Subtitle Rules
+  ### 3. Context & Specific Handling
+  ### 4. User Terminology (Authoritative Glossary)  ← 动态注入点
+  ### 5. Input/Output Format & Constraint
+  ### 6. Few-Shot Examples
+
+动态注入逻辑：
+-----------
+1. 加载模板文件
+2. 找到 "### X. User Terminology (Authoritative Glossary)" 章节
+3. 解析模板中已有的术语条目
+4. 与运行时 GlobalMemory.user_glossary 合并（运行时优先）
+5. 追加 GlobalMemory.glossary 作为 "Learned Terminology (Supplement)"
+6. 重新编号所有章节
+
+测试结果：
+-----------
+JAG.S04E09.zh-cn.ass 前 30 条（3 个 chunk）：
+  ✓ 模板正确加载
+  ✓ 28 个术语条目正确显示
+  ✓ 术语学习正常工作 (Chris, Benny, Bryer, Rabb, Mattoni, Commander)
+  ✓ 章节自动编号 1-6
+  ✓ 总 token: 9,865 | 费用: $0.43 USD
+
+优势：
+-----------
+1. ✅ 单一数据源 - 所有规则在一个文件中维护
+2. ✅ 易于定制 - 修改 markdown 文件，无需改代码
+3. ✅ 动态术语 - 自动合并模板和运行时术语
+4. ✅ 向后兼容 - 无 config 时使用 legacy 逻辑
+5. ✅ 自动编号 - 章节编号自动调整
+
+完成状态：
+-----------
+✅ 核心功能实现完成
+✅ prompts.py 新函数
+✅ SDK 调用适配
+✅ 配置更新
+✅ 文档更新
+✅ 测试通过
+✅ 生产就绪
+
+日期: 2025-12-01

@@ -46,7 +46,7 @@ class Config:
     memory_token_limit: int = 4000
     chunk_token_soft_limit: int = 60000  # ~0.8 * max_context_tokens
     pairs_per_chunk: Optional[int] = None  # If set, override token-based chunking
-    api_timeout: int = 280  # API request timeout in seconds
+    api_timeout: int = 600  # API request timeout in seconds
     verbose: bool = False  # Enable verbose output with detailed progress
     very_verbose: bool = False  # Dump full API responses (requires verbose)
     debug_prompts: bool = False  # Print system prompt/memory (requires very verbose)
@@ -57,7 +57,7 @@ class Config:
     price_per_1k_completion_tokens: float = 0.06
     glossary_max_entries: int = 100
     glossary_policy: str = "lock"  # lock: user glossary is authoritative; learned terms cannot override
-    user_prompt_path: str = "custom_main_prompt.md"  # Relative or absolute path to extra user prompt
+    user_prompt_path: str = "main_prompt.md"  # Path to main prompt template file (plan3.md strategy)
     terminology_min_confidence: float = 0.6  # Minimum confidence for extracted terminology entries
     main_model: MainModelSettings = field(default_factory=MainModelSettings)
     terminology_model: TerminologyModelSettings = field(default_factory=TerminologyModelSettings)

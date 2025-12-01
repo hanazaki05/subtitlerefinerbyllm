@@ -45,7 +45,7 @@ glossary:
 
 # User customization
 user:
-  prompt_path: "custom_main_prompt.md"  # Path to extra user prompt file
+  prompt_path: "main_prompt.md"  # Path to main prompt template file (plan3.md strategy)
 
 # Runtime options (can be overridden by CLI flags)
 runtime:

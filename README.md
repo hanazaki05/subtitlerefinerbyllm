@@ -374,7 +374,38 @@ Success rate:  100%
 - Natural phrasing: ~15% of lines
 - All ASS tags preserved: 100%
 
-## Configuration (v0.0.5)
+## Template-Based Prompt System (v0.0.6)
+
+The system prompt is now generated from a **single markdown template file** (`main_prompt.md`):
+
+### How It Works
+
+1. **Template Structure**: The template uses markdown sections (`### 1. English Subtitle Rules`, etc.)
+2. **Dynamic Injection**: The `### 4. User Terminology (Authoritative Glossary)` section is dynamically updated with:
+   - Template glossary entries (parsed from the file)
+   - Runtime `GlobalMemory.user_glossary` entries (merged, runtime takes precedence)
+   - Learned terminology (appended as "Learned Terminology (Supplement)")
+3. **Automatic Renumbering**: All sections are renumbered automatically
+
+### Template Sections
+
+```markdown
+### 1. English Subtitle Rules
+### 2. Chinese Subtitle Rules
+### 3. Context & Specific Handling
+### 4. User Terminology (Authoritative Glossary)  ← Dynamic injection point
+### 5. Input/Output Format & Constraint
+### 6. Few-Shot Examples
+```
+
+### Benefits
+
+- **Single source of truth** - All rules in one markdown file
+- **Easy customization** - Edit markdown without code changes
+- **Dynamic terminology** - Automatic glossary injection from GlobalMemory
+- **Backward compatible** - Falls back to legacy prompt building if no config provided
+
+## Configuration (v0.0.6)
 
 Edit [config.py](config.py) to customize:
 
@@ -416,7 +447,7 @@ class Config:
     price_per_1k_completion_tokens: float = 0.06
     glossary_max_entries: int = 100
     glossary_policy: str = "lock"
-    user_prompt_path: str = "custom_main_prompt.md"
+    user_prompt_path: str = "main_prompt.md"
     terminology_min_confidence: float = 0.6
     main_model: MainModelSettings = field(default_factory=MainModelSettings)
     terminology_model: TerminologyModelSettings = field(default_factory=TerminologyModelSettings)
@@ -426,7 +457,7 @@ class Config:
 - **Temperature**: Tune `config.main_model.temperature` (defaults to `1.0`) for the primary GPT-5 run, and `config.terminology_model.temperature` for the GPT-4o terminology extractor if you need stricter or looser extraction.
 - **Glossary limit**: Adjust `config.glossary_max_entries` (default `100`) if you need to retain more/fewer global terminology entries in the prompt.
 - **Glossary policy**: `config.glossary_policy="lock"` means learned terminology can only add new entries and will never override user-defined mappings from the user glossary.
-- **User prompt file**: Set `config.user_prompt_path` to point at a Markdown file whose contents are split into extra system instructions and a user glossary (`* Term -> 术语`).
+- **User prompt file**: Set `config.user_prompt_path` to point at the main prompt template file (default `main_prompt.md`). This template serves as the complete system prompt with dynamic terminology injection.
 - **Terminology confidence**: `config.terminology_min_confidence` controls both the GPT‑4o prompt threshold and local filtering of extracted terms.
 
 ### Using Alternative API Providers
@@ -638,6 +669,6 @@ For issues, questions, or suggestions:
 
 ---
 
-**Version**: 0.0.4
-**Last Updated**: November 28, 2025
+**Version**: 0.0.6
+**Last Updated**: December 1, 2025
 **Status**: Use at your own dangers

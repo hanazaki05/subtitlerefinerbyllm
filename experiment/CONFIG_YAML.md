@@ -124,8 +124,25 @@ glossary:
 
 ```yaml
 user:
-  prompt_path: "custom_main_prompt.md"  # Path to custom prompt file
+  prompt_path: "main_prompt.md"  # Path to main prompt template file
 ```
+
+**Template-Based Prompt System (plan3.md):**
+
+The `prompt_path` now points to a **main prompt template** file that serves as the complete system prompt. The template uses markdown sections:
+
+- `### 1. English Subtitle Rules`
+- `### 2. Chinese Subtitle Rules`
+- `### 3. Context & Specific Handling`
+- `### 4. User Terminology (Authoritative Glossary)` ← **Dynamic injection point**
+- `### 5. Input/Output Format & Constraint`
+- `### 6. Few-Shot Examples`
+
+The `### 4. User Terminology (Authoritative Glossary)` section is dynamically updated:
+1. Template glossary entries are parsed from the file
+2. Runtime `GlobalMemory.user_glossary` entries are merged (runtime takes precedence)
+3. `GlobalMemory.glossary` (learned terms) are appended as "Learned Terminology (Supplement)"
+4. All sections are renumbered automatically
 
 ### Runtime Options
 
@@ -298,5 +315,5 @@ Remember CLI overrides take precedence over YAML settings. Check if you're passi
 
 ---
 
-**Last Updated:** 2025-11-30
+**Last Updated:** 2025-12-01
 **Status:** Production Ready ✅

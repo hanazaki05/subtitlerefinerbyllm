@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.0.6] - 2025-12-01
+
+### Added
+- **Template-based prompt system** (plan3.md implementation):
+  - Single markdown template file (`main_prompt.md`) serves as the complete system prompt source
+  - Dynamic terminology injection into `### 4. User Terminology (Authoritative Glossary)` section
+  - Automatic section renumbering when content is modified
+  - Template glossary parsing and merging with runtime `GlobalMemory`
+- New prompt functions in `prompts.py`:
+  - `load_main_prompt_template(config)` - Load template from config path
+  - `inject_memory_into_template(template, global_memory)` - Inject terminology into template
+  - Helper functions for section parsing, boundary detection, and glossary merging
+
+### Changed
+- `config.user_prompt_path` default changed from `custom_main_prompt.md` to `main_prompt.md`
+- `build_system_prompt()` now accepts optional `config` parameter for template-based generation
+- `refine_chunk()` in `llm_client.py` passes config to `build_system_prompt()`
+- Removed `split_user_prompt_and_glossary` and `set_user_instruction` from main workflow
+- Legacy prompt building preserved as `build_system_prompt_legacy()` for backward compatibility
+
+### Technical Details
+- Template uses markdown `### N. Title` sections for structure
+- Glossary merging: runtime user_glossary takes precedence over template entries
+- Learned terminology appended as "Learned Terminology (Supplement)" section
+- Template caching implemented to avoid repeated file reads
+
 ## [0.0.5] - 2025-11-29
 
 ### Added

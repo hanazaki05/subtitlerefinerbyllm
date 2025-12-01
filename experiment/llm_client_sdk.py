@@ -195,8 +195,8 @@ def refine_chunk_sdk(
     Raises:
         LLMAPIError: If refinement fails
     """
-    # Build system prompt with memory
-    system_content = build_system_prompt(global_memory)
+    # Build system prompt with memory (using new template-based approach)
+    system_content = build_system_prompt(global_memory, config)
 
     # Convert pairs to JSON
     pairs_json = json.dumps(pairs_to_json_list(pairs_chunk), ensure_ascii=False, indent=2)
@@ -534,8 +534,8 @@ def refine_chunk_sdk_streaming(
     Raises:
         LLMAPIError: If refinement fails
     """
-    # Build system prompt with memory
-    system_content = build_system_prompt(global_memory)
+    # Build system prompt with memory (using new template-based approach)
+    system_content = build_system_prompt(global_memory, config)
 
     # Convert pairs to JSON
     pairs_json = json.dumps(pairs_to_json_list(pairs_chunk), ensure_ascii=False, indent=2)

@@ -35,7 +35,7 @@ from stats import (
     print_usage_report,
     print_chunk_progress
 )
-from prompts import build_system_prompt, set_user_instruction, split_user_prompt_and_glossary
+from prompts import build_system_prompt
 from utils import estimate_tokens, print_verbose_preview, format_time
 
 
@@ -67,12 +67,13 @@ def estimate_base_prompt_tokens(config: Config, global_memory: GlobalMemory) -> 
 
     Args:
         config: Configuration object
+        global_memory: Global memory object
 
     Returns:
         Estimated token count
     """
-    # Build a sample system prompt with current memory (including user glossary)
-    system_prompt = build_system_prompt(global_memory)
+    # Build a sample system prompt with current memory (using new template-based approach)
+    system_prompt = build_system_prompt(global_memory, config)
 
     return estimate_tokens(system_prompt, config.main_model.name)
 
@@ -126,26 +127,11 @@ def process_subtitles(
             pairs = pairs[:min(10, len(pairs))]  # Limit to first 10 pairs
             print(f"  [DRY RUN] Limited to {len(pairs)} pairs (from {original_count})")
 
-        # Step 3: Initialize global memory and user-defined prompt/glossary
+        # Step 3: Initialize global memory
+        # NOTE: The new template-based approach (plan3.md) loads the prompt template
+        # directly in build_system_prompt() and injects terminology from GlobalMemory.
+        # User glossary from template is parsed and merged at prompt build time.
         global_memory = init_global_memory()
-
-        # Load custom main prompt (if present) and split into instructions + user glossary
-        prompt_path_cfg = getattr(config, "user_prompt_path", "custom_main_prompt.md")
-        if os.path.isabs(prompt_path_cfg):
-            custom_prompt_path = prompt_path_cfg
-        else:
-            custom_prompt_path = os.path.join(os.path.dirname(__file__), prompt_path_cfg)
-        if os.path.exists(custom_prompt_path):
-            try:
-                with open(custom_prompt_path, "r", encoding="utf-8") as f:
-                    custom_text = f.read()
-                user_instructions, user_glossary = split_user_prompt_and_glossary(custom_text)
-                if user_instructions:
-                    set_user_instruction(user_instructions)
-                if user_glossary:
-                    global_memory.user_glossary = user_glossary
-            except Exception as e:
-                print(f"  Warning: Failed to load custom_main_prompt.md: {e}")
 
         # Step 4: Chunk pairs
         print("\nStep 3: Splitting into chunks...")

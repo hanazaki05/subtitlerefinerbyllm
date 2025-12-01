@@ -54,6 +54,9 @@ main_model:
   name: "gpt-5-mini"
   reasoning_effort: "medium"
 
+user:
+  prompt_path: "main_prompt.md"  # Main prompt template
+
 runtime:
   dry_run: false
   verbose: false
@@ -69,6 +72,22 @@ Command line arguments override YAML settings:
 ```bash
 python main_sdk.py input.ass output.ass --model gpt-4o --dry-run -v
 ```
+
+### Template-Based Prompt System (plan3.md)
+
+The system prompt is now generated from a **single markdown template file** (`main_prompt.md`):
+
+- All rules, examples, and terminology are defined in one file
+- The `### 4. User Terminology (Authoritative Glossary)` section is dynamically updated with:
+  - Template glossary entries (parsed from the file)
+  - Runtime user glossary (merged, runtime takes precedence)
+  - Learned terminology (appended as supplement)
+- All sections are automatically renumbered
+
+This approach provides:
+- **Single source of truth** for all prompt rules
+- **Easy customization** without code changes
+- **Dynamic terminology injection** from GlobalMemory
 
 ## Usage
 
@@ -128,7 +147,7 @@ The SDK implementation maintains compatibility with the main project's structure
 
 - Uses the same `SubtitlePair` data structure
 - Uses the same `GlobalMemory` system
-- Uses the same prompt templates from `prompts.py`
+- Uses template-based prompt generation from `prompts.py` (with `main_prompt.md`)
 - Uses the same `UsageStats` for tracking
 
 You can easily swap between HTTP and SDK implementations by changing imports:
